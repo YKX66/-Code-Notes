@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="school.name">
+        <div>{{school.name}}</div>
+        <div>{{school.age}}</div>
+        {{getNewName}}
+        <ul>
+            <li>1</li>
+            <li>1</li>
+        </ul>
+    </div>
+    <!-- <script src="https://cdn.bootcss.com/vue/2.6.10/vue.common.dev.js"></script> -->
+<script src="./mvvm.js"></script>
+
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                school:{
+                    name:"qqqqq",
+                    age:100
+                }
+            },
+            methods:{
+
+            },
+            computed:{//计算机属性
+                getNewName(){
+                    //vm代理了data了可以直接这样设置值
+                    return this.school.name + "666"
+                }
+            }
+        })
+    
+    </script>
+</body>
+
+</html>
